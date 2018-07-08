@@ -2,10 +2,30 @@ title: Hexo
 subtitle: "A fast, simple & powerful blog framework powered by Node.js."
 description: "Hexo is a fast, simple & powerful blog framework powered by Node.js."
 author: Hexo
-language: en
+language: zh-cn
 timezone: UTC
 
-url: https://hexo.io
+math:
+  engine: 'mathjax' # or 'katex'
+  # engine: 'katex'
+  mathjax:
+    src: "//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
+    config:
+      # MathJax config
+       tex2jax: 
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ]
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        processEscapes: true
+  katex:
+    css: "https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.5.1/katex.min.css"
+    js: "https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.5.1/katex.min.js"
+    config:
+      throwOnError: false
+      errorColor: "#cc0000"
+
+# url: https://hexo.io
+# root: /public/
+url: https://yaoxuanzhi.github.io
 root: /
 permalink: news/:year/:month/:day/:title/
 archive_dir: news
@@ -15,26 +35,14 @@ post_asset_folder: true
 per_page: 0
 
 theme: navy
+
 deploy:
   type: git
-  repo: git@github.com:hexojs/hexojs.github.io.git
+  repo: git@github.com:YaoXuanZhi/YaoXuanZhi.github.io.git
+  branch: master
 
 highlight:
   enable: true
   line_number: false
 
-disqus_shortname: hexojs
-google_analytics: UA-48498357-3
-fb_admins: 100000247608790
-algolia:
-  en:
-    api_key: c3d5d4c995b5e0c2ffb5623900279a66
-    index_name: hexo
-  zh-tw:
-    api_key: c83d2ec3440f40aec6d0e695ecec7ef3
-    index_name: hexo_zh-tw
-  zh-cn:
-    api_key: cdea7d4e47d84f6145b77e7f68689f35
-    index_name: hexo_zh-cn
-twitter: hexojs
-github: hexojs/hexo
+

@@ -1,40 +1,5 @@
-# Hexo Official Website
-<!-- Markdown snippet -->
-[![Build Status](https://travis-ci.org/hexojs/site.svg?branch=master)](https://travis-ci.org/hexojs/site)
-
-The website for Hexo. You can see the generated files at [hexojs/hexojs.github.io](https://github.com/hexojs/hexojs.github.io) repository.
-
-## Getting started
-
-Install dependencies:
-
-``` bash
-$ git clone https://github.com/hexojs/site.git
-$ cd site
-$ npm install
-```
-
-Generate:
-
-``` bash
-$ hexo generate
-```
-
-Run server:
-
-``` bash
-$ hexo server
-```
-
-## Contributors
-
-- English - [tommy351](https://github.com/tommy351)
-- 正體中文 - [tommy351](https://github.com/tommy351)
-- 简体中文 - [pinggod](https://github.com/pinggod), [Xuanwo](https://github.com/Xuanwo)
-- Русский - [twirlfog](https://github.com/twirlfog)
-- 한국어 - [lazyrodi](https://github.com/lazyrodi)
-- Deutschland - [philippnagel](https://github.com/philippnagel)
-- Portuguese (Brazilian) - [lucianobarauna](https://github.com/lucianobarauna), [ramonsantos](https://github.com/ramonsantos), [MathMesquita](https://github.com/MathMesquita), [pedrorezende](https://github.com/pedrorezende), [gregoryfm](https://github.com/gregoryfm)
+# YaoXuanzhi Official Website
+本仓库是fork hexojs/site而来，本人觉得hexo.io的官方主题navy蛮不错的，但是此主题并没有独立发布到[Hexo Theme](https://hexo.io/themes/)上，本着自己动手丰衣足食的原则了，移除了许多本人用不上的模块，基于原本的骨架构建自己的个人博客了
 
 ## License
 

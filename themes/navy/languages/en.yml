@@ -2,7 +2,6 @@ menu:
   docs: Docs
   about: AboutMe
   news: News
-  search: Search
 
 index:
   get_started: Get started

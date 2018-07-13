@@ -1,6 +1,6 @@
-title: Hexo
-subtitle: "A fast, simple & powerful blog framework powered by Node.js."
-description: "Hexo is a fast, simple & powerful blog framework powered by Node.js."
+title: YXZ's Blog
+# subtitle: "A fast, simple & powerful blog framework powered by Node.js."
+# description: "Hexo is a fast, simple & powerful blog framework powered by Node.js."
 author: Hexo
 language: zh-cn
 timezone: UTC

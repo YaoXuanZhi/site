@@ -5,7 +5,7 @@
 ```sh
 npm install hexo -g 
 npm i
-hexo c & hexo g & hexo s
+hexo clean & hexo g & hexo s
 ```
 
 ## License

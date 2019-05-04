@@ -1,0 +1,7 @@
+{
+    "amWiki.pasterImg.bIsSpecFolder": true,
+    "amWiki.pasterImg.specFolder": {
+        "rootDir": "source",
+        "resDir": "/assets"
+    }
+}

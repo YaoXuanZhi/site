@@ -1,6 +1,7 @@
 ---
 title: Hello World
 mathjax: true
+date: 2018-07-08
 ---
 
 Simple inline $a = b + c$.

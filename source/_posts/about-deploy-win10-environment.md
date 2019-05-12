@@ -26,5 +26,18 @@ tag:
 
 >~~如果是电脑小白的话，其实还有一种是被安全管家类软件拦截导致的，这里就不赘述了==!~~
 
-# 其它
+---
+
+### 更改TortoiseSVN的文件比较工具
+由于未知名原因，**TortoiseIDiff**工具无法在`SVN Commit对话框`上直接打开，因此将文本比较工具由 **TortoiseIDiff**更改为`Beyond Compare 3`，
+
+>打开TortoiseSVN的Setting，选择左边的 **Diff Viewer**，然后设置Diff configure，如：`"...\BComp.exe" %base %mine /title1=%bname /title2=%yname /leftreadonly`，配置如下所示：
+ - ![](/assets/2019-05-12/1557671439648.png)
+
+参考资料：
+ - [TortoiseSVN比较工具设置为BeyondCompare 4](https://www.cnblogs.com/linlf03/p/6923519.html)
+
+---
+
+# 吐槽
 这个价位下的surface pro已经没啥性价比了，但是作为一枚伪软粉以及颜控党，终究充值了一波信仰（ps:真香定律无处不在啊），另外它的便捷性的确比普通笔记本好多了，作为一个后端狗，算是为自己的背包减肥了。

@@ -227,3 +227,22 @@ goto end
 
 **markdown -> word/pdf/html**
 >采用[pandoc](https://pandoc.org/installing.html)来实现，目前官方支持多种markdown的导出格式，如：`word`、`pdf`、`html`等
+
+```sh
+# pandoc.bat
+@echo off
+
+set source_path=%1
+call :get_out_dir %source_path%
+cd /d %~dp0
+pandoc -s -o "%out_dir%.html" %source_path%
+
+pause
+goto end
+
+:get_out_dir
+set out_dir=%~dpn1
+goto end
+
+:end
+```

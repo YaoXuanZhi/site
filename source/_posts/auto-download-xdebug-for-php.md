@@ -1,5 +1,10 @@
+---
+title: 一键安装php-xdebug
+date: 2019-09-01
+---
+
 目前想要调试php，需要安装xdebug，具体教程可以参考idea上的php settings指导，如下图所示：
-  - ![](assets/2019-09-01/1567309969314.png)
+  - ![](/assets/2019-09-01/1567309969314.png)
 >归纳起来就三步：
   - 1. 查询phpinfo
   - 2. 根据phpinfo去(xdebug wizard](https://xdebug.org/wizard.php)搜索所需的xdebug版本及其下载链接
@@ -15,10 +20,10 @@
  - 2. ~~判断这个目录下是否有`php.ini`文件，如果没有的话，就`cp php.development php.ini`~~（这部分采用python来实现）
  - 3. ~~在shell上执行`php -i phpinfo(); > phpinfo.txt`，将结果输出到文本上~~（在python中调用此shell指令，并将输出存放在变量中）
  - 4. 用输出的phpinfo信息粘贴在[xdebug.org-custom installation instructions](https://xdebug.org/wizard.php)上的文本框上查询，这里面会检测到xdebug版本
-   - ![在wizard上查询xdebug版本](assets/2019-09-01/1567312543380.png)
+   - ![在wizard上查询xdebug版本](/assets/2019-09-01/1567312543380.png)
      - 具体的phpinfo的检测条件在[phpinfo-scanner.php](https://github.com/derickr/xdebug.org/blob/master/html/include/phpinfo-scanner.php)
        >这一步是关键，分析这个查询请求的`Responses Headers`和`Form Data`
-     - ![](assets/2019-09-01/1567314064999.png)
+     - ![](/assets/2019-09-01/1567314064999.png)
  - 5. 采用bs4从html上提取php_xdebug_xxx.dll的下载链接
  - 6. 下载php_xdebug_xxx.dll到ext目录下
  - 7. 采用configparser来修改php.ini上的xdebug配置
@@ -154,17 +159,19 @@ if __name__ == '__main__':
 
 **requirements.txt**:
 ```text
-beautifulsoup4==4.8.0
-configparser==3.8.1
+beautifulsoup4
+configparser
+PyInstaller
 ```
 
 ```sh
 cd php_dir
 pip3 install -r requirements.txt
 python main.py
+PyInstaller -F main.py
 ```
 
- - [php_xdebug_deploy.zip](assets/2019-09-01/php_xdebug_deploy.zip)
+ - [php_xdebug_deploy.zip](/assets/2019-09-01/php_xdebug_deploy.zip)
 
 ### 参考资料
  - [Python3 requests文件下载 期间显示文件信息和下载进度代码实例](https://www.jb51.net/article/167786.htm)

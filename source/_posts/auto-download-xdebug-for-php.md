@@ -123,8 +123,9 @@ def update_php_cfg(php_cfg, xdebug_path):
         conf.add_section(xdebug_section_name)
     conf.set(xdebug_section_name, "zend_extension", xdebug_path)
     conf.set(xdebug_section_name, "xdebug.remote_enable", "1")
-    conf.set(xdebug_section_name, "xdebug.remote_host", "10.0.2.2")
-    conf.set(xdebug_section_name, "xdebug.remote_port", "9000")
+    conf.set(xdebug_section_name, "xdebug.remote_autostart", "1")
+    # conf.set(xdebug_section_name, "xdebug.remote_host", "10.0.2.2")
+    # conf.set(xdebug_section_name, "xdebug.remote_port", "9000")
 
     outfile = codecs.open(php_cfg, "w")
     conf.write(outfile)
@@ -147,28 +148,14 @@ if __name__ == '__main__':
     dir_path = "./ext"
     file_name = os.path.basename(download_link) 
     file_path = os.path.join(dir_path, file_name)
-    if not os.path.exists(file_path):
-        # download_file(download_link, file_path)
-        download_file_with_process(download_link, file_path)
-    else:
-        print("%(file_name)s already exists, skip download ……" % {'file_path' : file_path})
-
     full_file_path = os.path.abspath(file_path)
+    if not os.path.exists(file_path):
+        # download_file(download_link, full_file_path)
+        download_file_with_process(download_link, full_file_path)
+    else:
+        print("%(full_file_path)s already exists, skip download ……" % {'full_file_path' : full_file_path})
+
     update_php_cfg(php_cfg, full_file_path)
-```
-
-**requirements.txt**:
-```text
-beautifulsoup4
-configparser
-PyInstaller
-```
-
-```sh
-cd php_dir
-pip3 install -r requirements.txt
-python main.py
-PyInstaller -F main.py
 ```
 
  - [php_xdebug_deploy.zip](/assets/2019-09-01/php_xdebug_deploy.zip)

@@ -3,18 +3,18 @@ title: 一键安装php-xdebug
 date: 2019-09-01
 ---
 
-目前想要调试php，需要安装xdebug，具体教程可以参考idea上的php settings指导，如下图所示：
-  - ![](/assets/2019-09-01/1567309969314.png)
+>目前想要调试php，需要安装xdebug，在idea里的php settings上有其安装指导，如下图所示：
+>![](/assets/2019-09-01/1567309969314.png)
 
-**归纳起来就三步**
-  - 1. 查询phpinfo
-  - 2. 根据phpinfo去(xdebug wizard](https://xdebug.org/wizard.php)搜索所需的xdebug版本及其下载链接
-  - 3. 然后在php.ini里加上xdebug的配置项
+ - 归纳起来就三步
+   - 1. 查询phpinfo
+   - 2. 拿phpinfo去[xdebug wizard](https://xdebug.org/wizard.php)查询其匹配的xdebug版本及其下载链接
+   - 3. 然后下载dll并在`php.ini`里修改xdebug的配置项
 
 ---
 
 #### 动机
-本人需要在多台机子上都快速部署好php的开发调试环境
+本人需要在多台机子上快速部署php的开发调试环境
 
 #### 基本思路
  - 1. ~~在shell上用`which php`查找到php的所在路径，并`cd $(dirname $(which php))`~~（将这个py脚本放置在php.exe的同级目录就行）
@@ -90,7 +90,7 @@ def download_file(url, file_path):
     with codecs.open(file_path,'wb') as f:
         f.write(r.content)
 
-# Refer to : [Python3 requests文件下载 期间显示文件信息和下载进度代码实例](https://www.jb51.net/article/167786.htm)
+# Refer to : https://www.jb51.net/article/167786.htm
 def download_file_with_process(url, file_path):
     with codecs.open(file_path, "wb") as fw:
         with requests.get(url, stream=True) as r:
@@ -169,6 +169,6 @@ if __name__ == '__main__':
  - [downloading-with-chrome-headless-and-selenium](https://stackoverflow.com/questions/45631715/downloading-with-chrome-headless-and-selenium)
 
 #### 注意事项
-由于此方法是完全依赖xdebug.org上的[custom installation instructions](https://xdebug.org/wizard.php)提供的方案来实现的，如果这个站点的规则改动了，那么此脚本也将会失效
+由于此方法是完全依赖xdebug.org上的[custom installation instructions](https://xdebug.org/wizard.php)提供查询功能，如果这个站点的规则变动了，则脚本可能会失效
 
->其实在刚编写此脚本的时候，也曾考虑过采用`selenium+headless browser()`来处理ajax请求，不过考虑到这个脚本做的就是减法，用headless browser的方案会引入第三方可执行程序，比如`chrormedriver.exe`，这就太不友好了，所以还是自己分析下ajax请求，提取到`[Analyse my phpinfo() output] Button`的真正http请求
+>ps:其实在刚编写此脚本的时候，也曾考虑过采用`selenium+headless browser()`来处理ajax请求，不过考虑到这个脚本做的就是减法，用headless browser的方案会引入第三方可执行程序，比如`chrormedriver.exe`，这就太不友好了，所以还是自己分析下ajax请求，提取到`[Analyse my phpinfo() output] Button`的真正http请求

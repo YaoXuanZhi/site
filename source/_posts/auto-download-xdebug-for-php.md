@@ -39,7 +39,7 @@ import requests, codecs, urllib, configparser
 from bs4 import BeautifulSoup
 from sys import stdout
 
-# 根据phpinfo查询在xdebug.org上提取xdebug.dll的下载连接
+# 拿phpinfo在xdebug.org上查询并提取xdebug.dll的下载链接
 def get_xdebug_download_page(phpinfo):
     url = 'https://xdebug.org/wizard.php'
     data = {
@@ -47,9 +47,6 @@ def get_xdebug_download_page(phpinfo):
         "submit": "Analyse my phpinfo() output"
     }
     headers = {
-        "Connection": "keep-alive",
-        "Cache-Control": "max-age=0",
-        "Upgrade-Insecure-Requests": "1",
         "User-Agent": "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Safari/537.36",
         "Origin": "https://xdebug.org",
         "Content-Type": "application/x-www-form-urlencoded",
@@ -60,7 +57,7 @@ def get_xdebug_download_page(phpinfo):
     }
     return requests.post(url=url, headers=headers, data=data).text
 
-# 提取页面上的xdebug的下载链接
+# 从html上提取xdebug的下载链接
 def find_xdebug_download_link(html):
     soup = BeautifulSoup(html, features="html.parser")
     return soup.find("ol").find("a")["href"]

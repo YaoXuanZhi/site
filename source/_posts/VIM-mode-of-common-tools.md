@@ -197,3 +197,6 @@ tag:
    >这个需要设置终端Vim的粘贴模式为粘贴保留格式：`:set paste`
  - 如何进行Vim 插件开发
    >学习[Vimscript 文档](https://www.w3cschool.cn/vim/gsenvozt.html)
+ - 如何查看ahk的内置变量
+   - ![查看ahk的内置变量](/assets/2019-10-02/1570005377287.png)
+     >比如，`%A_WorkingDir%`为ahk.exe的工作目录

@@ -246,3 +246,8 @@ goto end
 
 :end
 ```
+
+### FAQ
+ - 如何查看ahk的内置变量
+   - ![查看ahk的内置变量](/assets/2019-10-02/1570005377287.png)
+     >比如，`%A_WorkingDir%`为ahk.exe的工作目录

@@ -193,7 +193,34 @@ tag:
 ---
 
 ### FAQ
- - 在shell vim上粘贴文本出现缩进错乱的问题
-   >这个需要设置终端Vim的粘贴模式为粘贴保留格式：`:set paste`
- - 如何进行Vim 插件开发
-   >学习[Vimscript 文档](https://www.w3cschool.cn/vim/gsenvozt.html)
+##### 在shell vim上粘贴文本出现缩进错乱的问题
+>这个需要设置终端Vim的粘贴模式为粘贴保留格式：`:set paste`
+
+##### 如何进行Vim 插件开发
+>学习[Vimscript 文档](https://www.w3cschool.cn/vim/gsenvozt.html)
+
+##### Windows下如何编译ycm for vim
+需要安装llvm和python以及vs，以下是ycm的编译脚本
+```bat
+@echo off
+REM  配置ycm的编译环境
+set llvm_root="D:/ProgramFiles/LLVM"
+set libclang_path="D:/ProgramFiles/LLVM/lib/libclang.lib"
+
+REM  使用py2
+set PYTHON_LIBRARY="D:/ProgramFiles/Python27/libs/python27.lib"
+set PYTHON_INCLUDE_DIR="D:/ProgramFiles/Python27/include"
+
+REM  使用py3
+REM  set USE_PYTHON2=OFF
+REM  set PYTHON_LIBRARY="C:/Python35/libs/Python35.lib"
+REM  set PYTHON_INCLUDE_DIR="C:/Python35/include"
+
+REM  配置ycm项目导出路径
+set ycm_path="D:/GreenFolder/GvimWithYcm/vimfiles/bundle/YouCompleteMe/third_party/ycmd/cpp"
+
+mkdir build & cd build
+cmake -G "Visual Studio 15 2017 Win64" -DEXTERNAL_LIBCLANG_PATH=%libclang_path% -DPATH_TO_LLVM_ROOT=%llvm_root%; . %ycm_path%
+cd ..
+pause
+```

@@ -41,7 +41,7 @@ from sys import stdout
 
 # 拿phpinfo在xdebug.org上查询并提取xdebug.dll的下载链接
 def get_xdebug_download_page(phpinfo):
-    url = 'https://xdebug.org/wizard.php'
+    url = 'https://xdebug.org/wizard'
     data = {
         "data": phpinfo,
         "submit": "Analyse my phpinfo() output"
@@ -51,7 +51,7 @@ def get_xdebug_download_page(phpinfo):
         "Origin": "https://xdebug.org",
         "Content-Type": "application/x-www-form-urlencoded",
         "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3",
-        "Referer": "https://xdebug.org/wizard.php",
+        "Referer": "https://xdebug.org/wizard",
         "Accept-Encoding": "gzip, deflate, br",
         "Accept-Language": "zh-CN,zh;q=0.9",
     }
